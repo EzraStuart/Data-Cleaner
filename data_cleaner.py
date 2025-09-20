@@ -21,8 +21,8 @@ def setup_logging(output_dir):
         ]
     )
 
+# Smart dat conversion with multi-format support
 class SmartDateConverter:
-    """Enhanced date conversion with multiple format support"""
     
     def __init__(self):
         # Common date formats to try in order of preference
@@ -84,7 +84,7 @@ class SmartDateConverter:
         return None
     
     def smart_date_conversion(self, series, column_name):
-        """Convert dates using multiple strategies with better error handling"""
+        """Convert dates using multiple strategies"""
         original_count = len(series)
         converted_count = 0
         failed_values = []
@@ -281,7 +281,7 @@ class DataQualityChecker:
         return outlier_info
 
 class TextCleaner:
-    """Enhanced text cleaning and capitalization"""
+    """ Text cleaning and capitalisation"""
     
     def __init__(self):
         # Common abbreviations and acronyms that should stay uppercase
@@ -292,7 +292,7 @@ class TextCleaner:
             'inc', 'ltd', 'llc', 'corp', 'co', 'plc'
         }
         
-        # Currency codes should always be uppercase
+        # Currency codes to be uppercase
         self.currency_codes = {
             'usd', 'eur', 'gbp', 'jpy', 'aud', 'cad', 'chf', 'cny', 'sek', 'nzd',
             'mxn', 'sgd', 'hkd', 'nok', 'twd', 'krw', 'rub', 'inr', 'brl', 'zar',
@@ -305,8 +305,8 @@ class TextCleaner:
             'nor', 'of', 'on', 'or', 'so', 'the', 'to', 'up', 'yet'
         }
     
-    def smart_capitalize(self, text):
-        """Apply smart capitalization rules"""
+    def smart_capitalise(self, text):
+        """Apply capitalisation rules"""
         if pd.isna(text) or text == '' or str(text).lower() in ['nan', 'null', 'none']:
             return text
             
@@ -331,7 +331,7 @@ class TextCleaner:
             # Check if it's an abbreviation
             elif word_lower in self.abbreviations:
                 result_words.append(word_lower.upper())
-            # First word or after punctuation should be capitalized
+            # First word or after punctuation should be capitalised
             elif i == 0 or any(words[i-1].endswith(p) for p in '.!?'):
                 result_words.append(word_lower.capitalize())
             # Keep lowercase words lowercase unless they're first
@@ -357,7 +357,7 @@ class TextCleaner:
         # Convert to string 
         amount_str = str(amount_str)
         
-        # Handle null representations
+        # Handle null entries
         if amount_str in ['', 'nan', 'none', 'null', '<na>']:
             return pd.NA
         
@@ -377,7 +377,7 @@ class EnhancedDataCleaner:
         self.date_conversion_results = {}
     
     def load_file(self, file_path):
-        """Enhanced file loading with encoding detection and proper index handling"""
+        """File Loading"""
         logging.info(f"Loading file: {file_path}")
         
         if not os.path.exists(file_path):
@@ -481,17 +481,13 @@ class EnhancedDataCleaner:
         return potential_date_columns
     
     def clean_data(self, df, aggressive_cleaning=False):
-        """Enhanced data cleaning with case-insensitive duplicate removal and smart capitalization"""
+        """data cleaning with case-insensitive duplicate removal and smart capitalisation"""
         logging.info("Starting enhanced data cleaning...")
         
         original_shape = df.shape
         cleaning_steps = []
         
-        # Debug: Log initial state
-        logging.info(f"Initial DataFrame shape: {original_shape}")
-        logging.info(f"Initial columns: {list(df.columns)}")
-        
-        # Step 1: Remove completely empty rows/columns
+        #Step 1: Remove completely empty rows/columns
         empty_rows_before = len(df)
         df = df.dropna(how='all')
         empty_rows_removed = empty_rows_before - len(df)
@@ -565,7 +561,7 @@ class EnhancedDataCleaner:
             
             cleaning_steps.append(f"Initial cleaning of {len(str_cols)} text columns")
 
-        # Step 6: Smart date conversion (ENHANCED)
+        # Step 6: Date conversion using SmartDateConverter
         potential_date_cols = self.identify_date_columns(df)
         date_cols_converted = []
         
@@ -586,14 +582,14 @@ class EnhancedDataCleaner:
         if date_cols_converted:
             cleaning_steps.append(f"Smart-converted {len(date_cols_converted)} date columns: {', '.join(date_cols_converted)}")
         
-        # Step 4: Remove duplicates with enhanced financial data comparison
+        # Step 4: Remove duplicates with financial data comparison
         duplicates_before = len(df)
         logging.info("Removing duplicates with enhanced normalisation for financial data...")
         
         # Create a completely normalised version for comparison
         df_for_comparison = df.copy()
         
-        # Enhanced normalisation for financial/transaction data
+        #normalisation for financial/transaction data
         for col in df.columns:
             if df[col].dtype == 'object':
                 def normalise_value(val):
@@ -661,23 +657,23 @@ class EnhancedDataCleaner:
         else:
             logging.info("No duplicates found to remove")
         
-        # Step 5: Apply smart capitalization to text columns
+        # Step 5: capitalisation to text columns
         if len(str_cols) > 0:
-            logging.info("Applying smart capitalization to text data...")
-            capitalized_cols = []
+            logging.info("Applying smart capitalisation to text data...")
+            capitalised_cols = []
             
             for col in str_cols:
                 if col in df.columns and df[col].dtype == 'object':
-                    # Apply smart capitalization only to non-null values
-                    df[col] = df[col].apply(self.text_cleaner.smart_capitalize)
-                    capitalized_cols.append(col)
+                    # Apply smart capitalisation only to non-null values
+                    df[col] = df[col].apply(self.text_cleaner.smart_capitalise)
+                    capitalised_cols.append(col)
             
-            if capitalized_cols:
-                cleaning_steps.append(f"Applied smart capitalization to {len(capitalized_cols)} columns")
+            if capitalised_cols:
+                cleaning_steps.append(f"Applied smart capitalisation to {len(capitalised_cols)} columns")
         
         
         
-        # Step 7: Aggressive cleaning options
+        # Step 7: Aggressive cleaning 
         if aggressive_cleaning:
             # Remove rows with too many missing values (>50% missing)
             threshold = len(df.columns) * 0.5
