@@ -1,0 +1,11 @@
+Name,TransactionDate,Amount,Currency
+ john   SMITH ,02/08/2004,2 400, usd
+JOHN smith,2004-08-02,$2400,USD
+Jane DOE,08-02-2004,3000,EUR
+Alan Turing,20040802,1000,GBP
+,2004.08.02,500,
+Satoshi NAKAMOTO,August 02 2004,1,BTC
+Mary Johnson ,02.08.2004,£2 500,Usd
+Robert Brown,08/03/2004,NaN,USD
+ Ada Lovelace ,08-04-2004,7500,EUR
+John SMITH,2004/08/02,2400,usd
