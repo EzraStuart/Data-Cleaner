@@ -1,5 +1,5 @@
 # Data-Cleaner
-This project is a single-script data cleaning tool, whihc turns messy, inconsistent CSV/Excel data into analysis ready data.
+This project is a single-script data cleaning tool, utilising pandas. It turns messy, inconsistent CSV/Excel data into analysis ready data.
 
 It is designed with financial/trnasactiponal datasets in mind: mixed date formats, inconsistent currency codes, duplicate records and messy text fields.
 
