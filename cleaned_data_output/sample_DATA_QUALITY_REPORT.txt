@@ -1,0 +1,38 @@
+================================================================================
+COMPREHENSIVE DATA QUALITY REPORT
+================================================================================
+
+Generated: 2025-09-20T19:57:36.949146
+
+FILE SUMMARY
+----------------------------------------
+Original size: 10 rows × 4 columns
+Cleaned size:  8 rows × 4 columns
+Rows removed:  2
+Columns removed: 0
+
+CLEANING STEPS PERFORMED
+----------------------------------------
+• Initial cleaning of 4 text columns
+• Smart-converted 1 date columns: transactiondate
+• Removed 2 duplicate rows (enhanced normalisation)
+• Applied smart capitalisation to 3 columns
+
+DATE CONVERSION RESULTS
+----------------------------------------
+Column 'transactiondate':
+  • Conversion rate: 9/10 (90.00%)
+  • Detected format: %d/%m/%Y
+  • Failed values sample: ['20040802']
+
+DATA QUALITY ANALYSIS
+----------------------------------------
+Missing Data by Column:
+  name: 1 missing (12.5%)
+  transactiondate: 1 missing (12.5%)
+  amount: 1 missing (12.5%)
+  currency: 1 missing (12.5%)
+
+Duplicate Records:
+  Case-insensitive duplicates: 0
+  Case-sensitive duplicates: 0

@@ -1,0 +1,9 @@
+name,transactiondate,amount,currency
+John Smith,2004-08-02,2400,USD
+Jane Doe,2004-08-02,3000,EUR
+Alan Turing,,1000,GBP
+,2004-08-02,500,
+Satoshi Nakamoto,2004-08-02,1,BTC
+Mary Johnson,2004-02-08,2500,USD
+Robert Brown,2004-03-08,,USD
+ADA Lovelace,2004-08-04,7500,EUR

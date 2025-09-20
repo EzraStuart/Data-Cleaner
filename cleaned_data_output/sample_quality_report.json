@@ -1,0 +1,144 @@
+{
+  "timestamp": "2025-09-20T19:57:36.949146",
+  "file_info": {
+    "original_rows": 10,
+    "original_columns": 4,
+    "cleaned_rows": 8,
+    "cleaned_columns": 4
+  },
+  "cleaning_summary": {
+    "original_shape": [
+      10,
+      4
+    ],
+    "final_shape": [
+      8,
+      4
+    ],
+    "steps_performed": [
+      "Initial cleaning of 4 text columns",
+      "Smart-converted 1 date columns: transactiondate",
+      "Removed 2 duplicate rows (enhanced normalisation)",
+      "Applied smart capitalisation to 3 columns"
+    ],
+    "rows_removed": 2,
+    "columns_removed": 0,
+    "column_mapping": {
+      "Name": "name",
+      "TransactionDate": "transactiondate",
+      "Amount": "amount",
+      "Currency": "currency"
+    }
+  },
+  "date_conversion_results": {
+    "transactiondate": {
+      "original_count": 10,
+      "converted_count": "9",
+      "success_rate": 0.9,
+      "failed_values": [
+        "20040802"
+      ],
+      "detected_format": "%d/%m/%Y"
+    }
+  },
+  "quality_analysis": {
+    "missing_data": {
+      "name": {
+        "count": 1,
+        "percentage": 12.5
+      },
+      "transactiondate": {
+        "count": 1,
+        "percentage": 12.5
+      },
+      "amount": {
+        "count": 1,
+        "percentage": 12.5
+      },
+      "currency": {
+        "count": 1,
+        "percentage": 12.5
+      }
+    },
+    "duplicates": {
+      "full_row_duplicates": 0,
+      "full_row_duplicates_case_sensitive": 0,
+      "partial_duplicates_by_column": {
+        "name": "0",
+        "amount": "0",
+        "currency": "3"
+      }
+    },
+    "data_types": {
+      "name": {
+        "current_type": "object",
+        "suggestions": []
+      },
+      "transactiondate": {
+        "current_type": "datetime64[ns]",
+        "suggestions": []
+      },
+      "amount": {
+        "current_type": "object",
+        "suggestions": [
+          "numeric"
+        ]
+      },
+      "currency": {
+        "current_type": "object",
+        "suggestions": []
+      }
+    },
+    "outliers": {}
+  },
+  "column_statistics": {
+    "name": {
+      "count": 7,
+      "unique": 7,
+      "top": "John Smith",
+      "freq": 1,
+      "mean": NaN,
+      "min": NaN,
+      "25%": NaN,
+      "50%": NaN,
+      "75%": NaN,
+      "max": NaN
+    },
+    "transactiondate": {
+      "count": 7,
+      "unique": NaN,
+      "top": NaN,
+      "freq": NaN,
+      "mean": "2004-06-17 03:25:42.857142912",
+      "min": "2004-02-08 00:00:00",
+      "25%": "2004-05-20 12:00:00",
+      "50%": "2004-08-02 00:00:00",
+      "75%": "2004-08-02 00:00:00",
+      "max": "2004-08-04 00:00:00"
+    },
+    "amount": {
+      "count": 7,
+      "unique": 7,
+      "top": "2400",
+      "freq": 1,
+      "mean": NaN,
+      "min": NaN,
+      "25%": NaN,
+      "50%": NaN,
+      "75%": NaN,
+      "max": NaN
+    },
+    "currency": {
+      "count": 7,
+      "unique": 4,
+      "top": "USD",
+      "freq": 3,
+      "mean": NaN,
+      "min": NaN,
+      "25%": NaN,
+      "50%": NaN,
+      "75%": NaN,
+      "max": NaN
+    }
+  }
+}

@@ -1,0 +1,90 @@
+2025-09-20 19:57:29,059 - INFO - 
+============================================================
+2025-09-20 19:57:29,059 - INFO - PROCESSING: sample.csv
+2025-09-20 19:57:29,060 - INFO - ============================================================
+2025-09-20 19:57:29,060 - INFO - Loading file: sample.csv
+2025-09-20 19:57:29,063 - INFO - Successfully loaded CSV with utf-8 encoding
+2025-09-20 19:57:29,063 - INFO - Performing immediate data cleanup...
+2025-09-20 19:57:29,067 - INFO - Loaded 10 rows and 4 columns
+2025-09-20 19:57:29,067 - INFO - Original columns: ['Name', 'TransactionDate', 'Amount', 'Currency']
+2025-09-20 19:57:29,067 - INFO - Starting enhanced data cleaning...
+2025-09-20 19:57:29,069 - INFO - Column mapping:
+2025-09-20 19:57:29,070 - INFO -   'Name' -> 'name'
+2025-09-20 19:57:29,070 - INFO -   'TransactionDate' -> 'transactiondate'
+2025-09-20 19:57:29,070 - INFO -   'Amount' -> 'amount'
+2025-09-20 19:57:29,070 - INFO -   'Currency' -> 'currency'
+2025-09-20 19:57:29,071 - INFO - Cleaning text data before duplicate detection...
+2025-09-20 19:57:29,080 - INFO - Identified potential date columns: ['transactiondate']
+2025-09-20 19:57:29,081 - INFO - Attempting to convert column 'transactiondate' to datetime
+2025-09-20 19:57:29,081 - INFO - Starting smart date conversion for column: transactiondate
+2025-09-20 19:57:29,094 - INFO - Detected date format: %d/%m/%Y (success rate: 20.00%)
+2025-09-20 19:57:29,095 - INFO - Format-based conversion: 2/10 successful
+2025-09-20 19:57:29,098 - INFO - Corrected malformed year 20040 to 2004 in '20040802'
+2025-09-20 19:57:29,103 - INFO - Date conversion completed for transactiondate:
+2025-09-20 19:57:29,104 - INFO -   - Successful conversions: 9/10 (90.00%)
+2025-09-20 19:57:29,104 - WARNING -   - Failed to convert 1 values: ['20040802']...
+2025-09-20 19:57:29,104 - INFO - Successfully converted column 'transactiondate' to datetime
+2025-09-20 19:57:29,104 - INFO - Removing duplicates with enhanced normalisation for financial data...
+2025-09-20 19:57:29,107 - INFO - Found 2 duplicates to remove:
+2025-09-20 19:57:29,108 - INFO -   Removing duplicate at index 1:
+2025-09-20 19:57:29,108 - INFO -     Original: {'name': 'JOHN smith', 'transactiondate': Timestamp('2004-08-02 00:00:00'), 'amount': '$2400', 'currency': 'USD'}
+2025-09-20 19:57:29,108 - INFO -     normalised: {'name': 'john smith', 'transactiondate': Timestamp('2004-08-02 00:00:00'), 'amount': '2400', 'currency': 'usd'}
+2025-09-20 19:57:29,109 - INFO -   Removing duplicate at index 9:
+2025-09-20 19:57:29,109 - INFO -     Original: {'name': 'John SMITH', 'transactiondate': Timestamp('2004-08-02 00:00:00'), 'amount': '2400', 'currency': 'usd'}
+2025-09-20 19:57:29,109 - INFO -     normalised: {'name': 'john smith', 'transactiondate': Timestamp('2004-08-02 00:00:00'), 'amount': '2400', 'currency': 'usd'}
+2025-09-20 19:57:29,110 - INFO - Successfully removed 2 duplicates using enhanced normalisation
+2025-09-20 19:57:29,111 - INFO - Applying smart capitalisation to text data...
+2025-09-20 19:57:29,113 - INFO - Final DataFrame shape: (7, 4)
+2025-09-20 19:57:29,113 - INFO - Final columns: ['name', 'transactiondate', 'amount', 'currency']
+2025-09-20 19:57:29,114 - INFO - Cleaning completed. Shape changed from (10, 4) to (7, 4)
+2025-09-20 19:57:29,114 - INFO - Generating comprehensive quality report...
+2025-09-20 19:57:29,115 - INFO - Missing data analysis completed for 4 columns
+2025-09-20 19:57:29,120 - INFO - Found 0 full row duplicates (case-insensitive)
+2025-09-20 19:57:29,122 - INFO - Outlier analysis completed for 0 numeric columns
+2025-09-20 19:57:29,128 - INFO - Saving comprehensive output to cleaned_data_output...
+2025-09-20 19:57:29,451 - INFO - All outputs saved successfully
+2025-09-20 19:57:36,890 - INFO - 
+============================================================
+2025-09-20 19:57:36,891 - INFO - PROCESSING: sample.csv
+2025-09-20 19:57:36,892 - INFO - ============================================================
+2025-09-20 19:57:36,892 - INFO - Loading file: sample.csv
+2025-09-20 19:57:36,895 - INFO - Successfully loaded CSV with utf-8 encoding
+2025-09-20 19:57:36,896 - INFO - Performing immediate data cleanup...
+2025-09-20 19:57:36,899 - INFO - Loaded 10 rows and 4 columns
+2025-09-20 19:57:36,899 - INFO - Original columns: ['Name', 'TransactionDate', 'Amount', 'Currency']
+2025-09-20 19:57:36,900 - INFO - Starting enhanced data cleaning...
+2025-09-20 19:57:36,902 - INFO - Column mapping:
+2025-09-20 19:57:36,902 - INFO -   'Name' -> 'name'
+2025-09-20 19:57:36,903 - INFO -   'TransactionDate' -> 'transactiondate'
+2025-09-20 19:57:36,903 - INFO -   'Amount' -> 'amount'
+2025-09-20 19:57:36,904 - INFO -   'Currency' -> 'currency'
+2025-09-20 19:57:36,904 - INFO - Cleaning text data before duplicate detection...
+2025-09-20 19:57:36,910 - INFO - Identified potential date columns: ['transactiondate']
+2025-09-20 19:57:36,910 - INFO - Attempting to convert column 'transactiondate' to datetime
+2025-09-20 19:57:36,910 - INFO - Starting smart date conversion for column: transactiondate
+2025-09-20 19:57:36,922 - INFO - Detected date format: %d/%m/%Y (success rate: 20.00%)
+2025-09-20 19:57:36,923 - INFO - Format-based conversion: 2/10 successful
+2025-09-20 19:57:36,925 - INFO - Corrected malformed year 20040 to 2004 in '20040802'
+2025-09-20 19:57:36,930 - INFO - Date conversion completed for transactiondate:
+2025-09-20 19:57:36,931 - INFO -   - Successful conversions: 9/10 (90.00%)
+2025-09-20 19:57:36,931 - WARNING -   - Failed to convert 1 values: ['20040802']...
+2025-09-20 19:57:36,932 - INFO - Successfully converted column 'transactiondate' to datetime
+2025-09-20 19:57:36,932 - INFO - Removing duplicates with enhanced normalisation for financial data...
+2025-09-20 19:57:36,934 - INFO - Found 2 duplicates to remove:
+2025-09-20 19:57:36,935 - INFO -   Removing duplicate at index 1:
+2025-09-20 19:57:36,936 - INFO -     Original: {'name': 'JOHN smith', 'transactiondate': Timestamp('2004-08-02 00:00:00'), 'amount': '$2400', 'currency': 'USD'}
+2025-09-20 19:57:36,936 - INFO -     normalised: {'name': 'john smith', 'transactiondate': Timestamp('2004-08-02 00:00:00'), 'amount': '2400', 'currency': 'usd'}
+2025-09-20 19:57:36,937 - INFO -   Removing duplicate at index 9:
+2025-09-20 19:57:36,937 - INFO -     Original: {'name': 'John SMITH', 'transactiondate': Timestamp('2004-08-02 00:00:00'), 'amount': '2400', 'currency': 'usd'}
+2025-09-20 19:57:36,937 - INFO -     normalised: {'name': 'john smith', 'transactiondate': Timestamp('2004-08-02 00:00:00'), 'amount': '2400', 'currency': 'usd'}
+2025-09-20 19:57:36,938 - INFO - Successfully removed 2 duplicates using enhanced normalisation
+2025-09-20 19:57:36,938 - INFO - Applying smart capitalisation to text data...
+2025-09-20 19:57:36,939 - INFO - Final DataFrame shape: (8, 4)
+2025-09-20 19:57:36,940 - INFO - Final columns: ['name', 'transactiondate', 'amount', 'currency']
+2025-09-20 19:57:36,940 - INFO - Cleaning completed. Shape changed from (10, 4) to (8, 4)
+2025-09-20 19:57:36,940 - INFO - Generating comprehensive quality report...
+2025-09-20 19:57:36,941 - INFO - Missing data analysis completed for 4 columns
+2025-09-20 19:57:36,945 - INFO - Found 0 full row duplicates (case-insensitive)
+2025-09-20 19:57:36,948 - INFO - Outlier analysis completed for 0 numeric columns
+2025-09-20 19:57:36,956 - INFO - Saving comprehensive output to cleaned_data_output...
+2025-09-20 19:57:37,177 - INFO - All outputs saved successfully
